@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compile C++",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "${file}",
+          "-o",
+          "${fileDirname}/temp.exe"
+        ],
+        "problemMatcher": ["$gcc"]
+      },
+      {
+        "label": "Run C++",
+        "type": "shell",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "\"${fileDirname}\\temp.exe\" && del \"${fileDirname}\\temp.exe\""
+        ],
+        "dependsOn": "Compile C++",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+  
+  
