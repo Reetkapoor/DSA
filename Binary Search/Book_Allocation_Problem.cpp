@@ -6,8 +6,6 @@
 #include<vector>
 using namespace std;
 
-
-
 bool isPossible( vector<int> &books, int n, int m, int mid){
     int count=0;
 
