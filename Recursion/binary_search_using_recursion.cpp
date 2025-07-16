@@ -4,16 +4,16 @@
 #include<vector>
 using namespace std;
 
-bool binarySearch(vector<int> &arr, int s,int e, int key){
+int binarySearch(vector<int> &arr, int s,int e, int key){
     int mid= s+(e-s)/2;
     //base case
     //element not found
     if(s>e){
-        return false;
+        return -1;
     }
     //element found
     if(arr[mid]==key){
-        return true;
+        return mid;
     }
     if(arr[mid]<key){
         return binarySearch(arr, mid+1, e, key);
